@@ -1,0 +1,7 @@
+{
+  "srcDir": "./src",
+  "localDir": "./local",
+  "stubDir": "./stub",
+  "inlineDir": "./tmp",
+  "distDir": "./dist"
+}

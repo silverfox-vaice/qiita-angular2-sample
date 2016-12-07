@@ -1,0 +1,105 @@
+@import "./src/app/stock/component/stock-base"
+
+
+table
+    margin: 10px auto
+
+th,td
+    padding: 8px 15px
+    text-align: center
+    vertical-align: middle
+
+th
+    background: $baseColor2
+    color: $fontColor2
+
+tr
+    height: 2em
+    background: $bgColor
+
+tr:nth-child(2n+1)
+    background: lighten($baseColor2, 65%)
+
+tr:hover
+    background: lighten($baseColor2, 55%)
+    cursor: pointer
+
+td:first-child
+    color: $baseColor
+    font-weight: bold
+
+td:nth-child(2)
+    text-align: left
+
+td:nth-child(3)
+    text-align: left
+
+td:nth-child(n+4)
+    text-align: right
+
+p
+    text-align: center
+
+.loading
+    margin-top: 200px
+
+p span
+    position: relative
+    background: $baseColor
+    z-index: 1
+    color: $fontColor2
+    display: inline-block
+
+button
+    overflow: hidden
+    width: 350px
+    border: none
+    background: none
+    cursor: pointer
+    padding: 10px 10px
+    text-align: center
+    display: inline-block
+    letter-spacing: 1px
+    font-weight: 700
+    outline: none
+    position: relative
+    transition: all 0.3s
+    border: 3px solid $bgColor
+    color: $fontColor2
+
+button:after
+    content: ''
+    position: absolute
+    z-index: -1
+    transition: all 0.3s
+    width: 0
+    height: 103%
+    top: 50%
+    left: 50%
+    background: $bgColor
+    opacity: 0
+    transform: translateX(-50%) translateY(-50%)
+
+
+button:before
+    font-family: 'icomoon'
+    speak: none
+    font-style: normal
+    font-weight: normal
+    font-variant: normal
+    text-transform: none
+    line-height: 1
+    position: relative
+    font-smoothing: antialiased
+
+button:hover,
+button:active
+    color: $baseColor
+
+button:hover:after
+    width: 90%
+    opacity: 1
+
+button:active:after
+    width: 101%
+    opacity: 1

@@ -1,0 +1,94 @@
+@import "./src/app/stock/component/stock-base"
+
+
+form
+  z-index: 1000
+  position: fixed
+  background: $bgColor
+  box-shadow: 0px 0px 3px 1px lighten($borderColor, 10%)
+  border-radius: 2px
+  animation: fade-in 0.3s linear 0s
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+h3
+  padding: 5px
+  background: $baseColor2
+  color: $fontColor2
+  text-align: center
+  margin: -1px
+
+form>ul
+  padding: 10px 25px 15px
+
+@keyframes fade-in
+  0%
+    display: none
+    opacity: 0
+  100%
+    display: block
+    opacity: 1
+
+input[readonly]
+  border: none !important
+  box-shadow: none !important
+
+li
+  display: flex
+  margin-bottom: 5px
+  justify-content: space-around
+
+label
+  width: 100px
+  font-weight: bold
+
+label:after
+  content: ":"
+
+.btn
+  width: 100%
+  margin-top: 10px
+  display: flex
+  justify-content: space-around
+  padding: 0 50px
+
+@mixin result($color)
+  color: $fontColor2
+  font-size: 150%
+  background: $color
+  box-shadow: 0px 0px 3px 1px lighten($color, 10%)
+  padding: 5px
+  width: 100px
+  text-align: center
+  animation: result 2s linear 0s
+  opacity: 0
+  position: absolute
+  bottom: 150px
+  left: 50%
+  z-index: -1
+
+.success
+  @include result($baseColor2)
+
+.faild
+  @include result($errBgColor)
+
+@keyframes result
+  0%
+    display: none
+    opacity: 0
+    margin-left: -120px
+    z-index: 9999
+  15%
+    display: block
+    opacity: 1
+    margin-left: -50px
+  85%
+    display: block
+    opacity: 1
+    margin-left: -50px
+  100%
+    display: none
+    opacity: 0
+    margin-left: 120px

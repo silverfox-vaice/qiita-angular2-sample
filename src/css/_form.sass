@@ -1,0 +1,49 @@
+@import "./src/css/_color.sass"
+
+input
+  border: 1px solid #bbb
+  padding: 0px 3px
+
+@mixin input-base($color)
+  border: 1px solid $color
+  box-shadow: 0px 0px 2px 1px lighten($color, 40%) inset
+
+
+input:hover
+  @include input-base(#999)
+
+input:focus
+  @include input-base($baseColor)
+
+input.ng-invalid
+  @include input-base(#c00)
+  background: #f99
+  position: relative
+
+input.ng-invalid:after
+  content: url("/img/alert.png")
+  width: 20px
+  height: 20px
+  z-index: 5
+  position: absolute
+  top: 0px
+  right: 0px
+
+@mixin button-base($color)
+  border: 1px solid darken($color, 10%)
+  padding: 2px 5px
+  border-radius: 1px
+  background: $color
+  cursor: pointer
+  &:hover, &:active, &:focus
+    background: lighten($color, 5%)
+
+
+button[type=submit]
+  @include button-base(#4d90fe)
+  color: #fff
+
+
+button[type=reset]
+  @include button-base(#ddd)
+

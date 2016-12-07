@@ -1,0 +1,1 @@
+export const  API_ENDPOINT = 'https://silverfox-sample1.appspot.com/api';

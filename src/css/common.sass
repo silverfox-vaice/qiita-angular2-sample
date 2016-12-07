@@ -1,0 +1,70 @@
+@import "./src/css/_reset.sass"
+@import "./src/css/_form.sass"
+
+
+html, body
+    height: 100%
+    width: 100%
+
+body
+    color: $fontColor
+    font-family: -apple-system, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif
+    overflow-y: scroll
+    font-size: 85%
+
+header
+    margin-bottom: 15px
+
+header h1
+    background: $baseColor2
+    color: $fontColor2
+    font-size: 200%
+    font-weight:bold
+    padding: 10px
+    text-align: center
+    position: relative
+
+header h1:after
+    content: ''
+    position: absolute
+    width: 0
+    height: 0
+    top: 100%
+    left: 65%
+    border: 13px solid transparent
+    border-top: 10px solid $baseColor2
+
+header section
+    background: lighten($baseColor2, 70%)
+    padding: 20px
+    line-height: 150%
+    text-align: center
+
+main
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    position: relative
+    margin-bottom: 25px
+
+footer
+    position: fixed
+    bottom: 0px
+    border-top: 1px solid lighten($baseColor2, 60%)
+    width: 100%
+    text-align: center
+    background: lighten($baseColor2, 70%)
+    padding: 3px 5px
+
+
+section .overlay
+  position: fixed
+  left: 0px
+  top: 0px
+  right: 0px
+  bottom: 0px
+  width: 100%
+  height: 100%
+  background: #333
+  opacity: 0.8
+  z-index: 999

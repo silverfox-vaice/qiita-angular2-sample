@@ -1,0 +1,6 @@
+/stub/
+/dist/
+/local/
+/node_modules/
+npm-debug.*
+/src/*.css

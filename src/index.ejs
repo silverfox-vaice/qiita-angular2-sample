@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>silverfox's qiita sample</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <% if (type == 'local') { %>
+      <script src="/node_modules/systemjs/dist/system.src.js"></script>
+      <script src="/systemjs.config.js"></script>
+      <script>
+          System.import('app').then(function(m){
+              m.init();
+          }).catch(function(err){
+              console.error(err);
+          });
+      </script>
+    <% } else { %>
+      <% for (var bundleFilePath of bundleFileList) { %>
+        <script src="/js/<%= bundleFilePath %>"></script>
+      <% } %>
+    <% } %>
+
+    <link href="/css/common.css" media="all" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+    <h1>Stock Data List</h1>
+    <section>
+        <p>@silverfoxが<a href="http://qiita.com/silverfox">qiita</a>上で公開している記事用のサンプルサイトです。</p>
+    </section>
+    </header>
+    <main>
+      <stock-table>loading...</stock-table>
+    </main>
+    <footer>
+      © 2016 silverfox, inc.
+    </footer>
+  </body>
+</html>

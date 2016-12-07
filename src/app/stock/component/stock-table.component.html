@@ -1,0 +1,31 @@
+<p><span><button (click)="updateStatus();">RELOAD DATA</button></span></p>
+<p [hidden]="loadElement" class="loading"><img src="/img/loading.gif"></p>
+<stock-edit></stock-edit>
+<table [hidden]="hideElement">
+  <thead>
+    <tr>
+      <th (click)="sort('code');">コード</th>
+      <th (click)="sort('name');">銘柄名</th>
+      <th [hidden]="isMobile" (click)="sort('market');">市場</th>
+      <th [hidden]="isMobile" (click)="sort('openingPrice');">始値</th>
+      <th [hidden]="isMobile" (click)="sort('highprice');">高値</th>
+      <th [hidden]="isMobile" (click)="sort('lowPrice');">安値</th>
+      <th [hidden]="isMobile" (click)="sort('closingPrice');">終値</th>
+      <th [hidden]="isMobile" (click)="sort('volume');">出来高</th>
+      <th [hidden]="isMobile" (click)="sort('tradingValue');">売買代金</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let entity of data | orderby : [orderField,'desc']" (click)="showInfo(entity);">
+      <td>{{ entity.code }}</td>
+      <td>{{ entity.name }}</td>
+      <td [hidden]="isMobile">{{ entity.market }}</td>
+      <td [hidden]="isMobile">{{ entity.openingPrice | number : fractionSize }}</td>
+      <td [hidden]="isMobile">{{ entity.highprice | number : fractionSize }}</td>
+      <td [hidden]="isMobile">{{ entity.lowPrice | number : fractionSize }}</td>
+      <td [hidden]="isMobile" [hidden]="isMobile">{{ entity.closingPrice | number : fractionSize }}</td>
+      <td [hidden]="isMobile">{{ entity.volume | number : fractionSize }}</td>
+      <td [hidden]="isMobile">{{ entity.tradingValue | number : fractionSize }}</td>
+    </tr>
+  </tbody>
+</table>

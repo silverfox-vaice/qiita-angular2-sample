@@ -1,0 +1,50 @@
+<div [hidden]="hideElement">
+  <section>
+    <div class="overlay"></div>
+    <form (ngSubmit)="onSubmit(stockForm)" #stockForm="ngForm">
+      <h3>「{{ model.name }}」の情報を編集</h3>
+      <ul>
+        <li>
+          <label for="code">コード</label>
+          <input type="text" id="code" name="code" #code="ngModel" [(ngModel)]="model.code" readonly>
+        </li>
+        <li>
+          <label for="name">銘柄名</label>
+          <input type="text" id="name" name="name" #name="ngModel" [(ngModel)]="model.name" readonly>
+        </li>
+        <li>
+          <label for="market">市場</label>
+          <input type="text" id="market" name="market" #market="ngModel" [(ngModel)]="model.market" readonly>
+        </li>
+        <li>
+          <label for="openingPrice">始値</label>
+          <input type="text" id="openingPrice" name="openingPrice" #openingPrice="ngModel" [(ngModel)]="model.openingPrice" required maxlength=7 pattern="[0-9.]+">
+        </li>
+        <li>
+          <label for="highprice">高値</label>
+          <input type="text" id="highprice" name="highprice" #highprice="ngModel" [(ngModel)]="model.highprice" required maxlength=7 pattern="[0-9.]+">
+        </li>
+        <li>
+          <label for="lowPrice">安値</label>
+          <input type="text" id="lowPrice" name="lowPrice" #lowPrice="ngModel" [(ngModel)]="model.lowPrice" required maxlength=7 pattern="[0-9.]+">
+        </li>
+        <li>
+          <label for="closingPrice">終値</label>
+          <input type="text" id="closingPrice" name="closingPrice" #closingPrice="ngModel" [(ngModel)]="model.closingPrice" required maxlength=7 pattern="[0-9.]+">
+        </li>
+        <li>
+          <ul class="btn">
+            <li>
+              <button type="submit" [disabled]="!stockForm.form.valid">更新する</button>
+            </li>
+            <li>
+              <button type="reset" (click)="close();">キャンセル</button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p [hidden]="hideSuccess" class="success">Success!</p>
+      <p [hidden]="hideFaild" class="faild">Faild...</p>
+    </form>
+  </section>
+</div>
