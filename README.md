@@ -10,8 +10,8 @@
 
 ### 準備
 
-1. developブランチ指定でcloneする(16/12/08時点ではdevelopのみ)  
-`git clone -b develop https://github.com/silverfox-vaice/qiita-angular2-sample.git`
+1. cloneする  
+`git clone https://github.com/silverfox-vaice/qiita-angular2-sample.git`
 2. ディレクトリ移動  
 `cd qiita-angular2-sample`
 3. npmでnode_modulesをインストール  
