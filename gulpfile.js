@@ -173,7 +173,7 @@ gulp.task('local-server', function() {
   gulp.src(conf.gulp.localDir)
     .pipe(webserver({
       host: 'localhost',
-      port: 8100,
+      port: 8200,
       open: true,
       livereload: false //自動リロードはしない
     }));
